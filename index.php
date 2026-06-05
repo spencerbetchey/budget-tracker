@@ -11,7 +11,7 @@ $totalIncome = $incomeRow['total'] ? $incomeRow['total'] : 0;
 // Get total expenses
 $expenseResult = mysqli_query($conn, "SELECT SUM(amount) AS total FROM transactions WHERE type = 'expense'");
 $expenseRow = mysqli_fetch_assoc($expenseResult);
-$totalExpenses = $expenseRow['total'] ? $incomeRow['total'] : 0;
+$totalExpenses = $expenseRow['total'] ? $expenseRow['total'] : 0;
 
 // Calculate balance
 $balance = $totalIncome - $totalExpenses;
